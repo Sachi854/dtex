@@ -40,7 +40,7 @@ LaTeXやLuaTeXのようにのTeXの処理系が多数存在しているが迷っ
 
 ## Install Docker  
 
-[これ](https://github.com/Sachi854/dtex/blob/main/install_docker.md)を見てインストールする    
+[これ](https://github.com/Sachi854/dtex/blob/master/install_docker.md)を見てインストールする    
 
 ## Pull the image  
 
@@ -73,7 +73,7 @@ sachi854/dtex:latest"
 
 ### Windows  
 
-[dtex.bat](https://github.com/Sachi854/dtex/blob/main/dtex.bat)を適当なディレクトリに配置してパスを通す  
+[dtex.bat](https://github.com/Sachi854/dtex/blob/master/dtex.bat)を適当なディレクトリに配置してパスを通す  
 
 ```powershell
 git colone https://github.com/Sachi854/dtex
@@ -369,6 +369,7 @@ $F(s) = \mathcal{L}^{-1}[f(t)]$
 - File -> Auto Saveを有効にすると勝手にセーブしれくれるので便利  
 - [Local History](https://marketplace.visualstudio.com/items?itemName=xyz.local-history)を入れるとGitなしでもそこそこやっていける程度に勝手にバージョン管理しれくれる  
 - [ここ](https://github.com/James-Yu/LaTeX-Workshop)見てsettings.jsonの設定を詰めればもっと柔軟にビルドできる  
+- TeXファイルを編集中に左側のTEXマークをクリックするとLaTeX Workshopのタブが開きビルドやクリーンなどが行える  
 
 # Reference
 
