@@ -9,8 +9,6 @@ TeX Live + 原ノ味フォントのDockerイメージでTeXのコンパイル環
 
 後半で**VSCodeでTeXのプレビューを出し編集する方法**を示す  
 
-LaTeXやLuaTeXのようにのTeXの処理系が多数存在しているが迷ったら```XeLaTeX```もしくは```LuaLaTeX```を使っておけば間違いないらしい  
-
 # Contensts
 
 - [dtex](#dtex)
@@ -47,13 +45,13 @@ LaTeXやLuaTeXのようにのTeXの処理系が多数存在しているが迷っ
 ビルドは時間がかかるのでプルする. 4GB程度  
 
 ```bash
-docker pull ghcr.io/sachi854/sachi854/dtex:latest
+docker pull ghcr.io/sachi854/dtex:1.1
 ```  
 
 このイメージが気に食わないなビルドし新鮮なイメージを作る  
 
 ```bash
-docker build https://github.com/Sachi854/dtex -t sachi854/dtex:latest --no-cache
+docker build https://github.com/Sachi854/dtex -t ghcr.io/sachi854/dtex:1.1 --no-cache
 ```
 
 ## Set the alias  
@@ -68,7 +66,7 @@ docker build https://github.com/Sachi854/dtex -t sachi854/dtex:latest --no-cache
 alias dtex="docker run --rm \
 --mount type=bind,source="$(pwd)",target=/workdir \
 --mount type=volume,source=ltcache,target=/usr/local/texlive/2020/texmf-var/luatex-cache \
-sachi854/dtex:latest"
+ghcr.io/sachi854/dtex:1.1"
 ```
 
 ### Windows  
@@ -79,7 +77,7 @@ sachi854/dtex:latest"
 git colone https://github.com/Sachi854/dtex
 mkdir ~/tools
 cp ./dtex/dtex.bat ~/tools
-# そしたら~/toolsのパスを通す
+# 最後に~/toolsのパスを通す
 ```
 
 # Usages  
@@ -372,6 +370,9 @@ $F(s) = \mathcal{L}^{-1}[f(t)]$
 - TeXファイルを編集中に左側のTEXマークをクリックするとLaTeX Workshopのタブが開きビルドやクリーンなどが行える  
 
 # Reference
+
+History of TeX  
+https://www.slideshare.net/doraTeX/the-history-of-tex-and-its-recent-advances
 
 TeX Live とは  
 https://acetaminophen.hatenablog.com/entry/texadvent2016-20161205  
