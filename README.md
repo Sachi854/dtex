@@ -51,7 +51,7 @@ docker pull ghcr.io/sachi854/dtex:1.1
 このイメージが気に食わないなビルドし新鮮なイメージを作る  
 
 ```bash
-docker build https://github.com/Sachi854/dtex -t ghcr.io/sachi854/dtex:1.1 --no-cache
+docker build https://raw.githubusercontent.com/Sachi854/dtex/master/Dockerfile -t ghcr.io/sachi854/dtex:1.12 --no-cache
 ```
 
 ## Set the alias  
