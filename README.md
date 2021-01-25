@@ -45,13 +45,13 @@ TeX Live + 原ノ味フォントのDockerイメージでTeXのコンパイル環
 ビルドは時間がかかるのでプルする. 4GB程度  
 
 ```bash
-docker pull ghcr.io/sachi854/dtex:1.1
+docker pull ghcr.io/sachi854/dtex:latest
 ```  
 
 このイメージが気に食わないなビルドし新鮮なイメージを作る  
 
 ```bash
-docker build https://raw.githubusercontent.com/Sachi854/dtex/master/Dockerfile -t ghcr.io/sachi854/dtex:1.12 --no-cache
+docker build https://raw.githubusercontent.com/Sachi854/dtex/master/Dockerfile -t ghcr.io/sachi854/dtex:latest --no-cache
 ```
 
 ## Set the alias  
@@ -66,7 +66,7 @@ docker build https://raw.githubusercontent.com/Sachi854/dtex/master/Dockerfile -
 alias dtex="docker run --rm \
 --mount type=bind,source="$(pwd)",target=/workdir \
 --mount type=volume,source=ltcache,target=/usr/local/texlive/2020/texmf-var/luatex-cache \
-ghcr.io/sachi854/dtex:1.1"
+ghcr.io/sachi854/dtex:latest"
 ```
 
 ### Windows  
@@ -262,7 +262,7 @@ VSCodeは[ここ](https://code.visualstudio.com)からダウンロード
         "type=bind,source=%DIR%,target=/workdir",
         "--mount",
         "type=volume,source=ltcache,target=/usr/local/texlive/2020/texmf-var/luatex-cache", 
-        "sachi854/dtex:latest",
+        "ghcr.io/sachi854/dtex:latest",
         "llmk",
         "%DOCFILE%",
       ]
