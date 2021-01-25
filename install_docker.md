@@ -67,14 +67,37 @@ Ubuntuのみやり方を説明する
 # Install uidmap
 sudo apt update
 sudo apt install uidmap
+```
 
+```
 # Install root less mode
 curl -fsSL https://get.docker.com/rootless | sh
+```
 
+すると以下のような**ユーザーによって異なる**出力が得られる. その中の```export```から始まる行をすべてコピーし```~/.bashrc```の最後尾に追記する   
+
+```bash
+[INFO] Installed docker.service successfully.
+[INFO] To control docker.service, run: `systemctl --user (start|stop|restart) docker.service`
+[INFO] To run docker.service on system startup, run: `sudo loginctl enable-linger xxxxx`
+
+[INFO] Make sure the following environment variables are set (or add them to ~/.bashrc):
+
+# この場合なら以下2行をコピーして.bashrcに追記する
+export PATH=/home/xxxx/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+```
+
+追記したらその設定を有効にしデーモンも有効にする  
+
+```
 # Enable demon
+. ~/.bashrc
 systemctl --user enable docker
 sudo loginctl enable-linger $(whoami)
 ```
+
+できればPCを再起動するように  
 
 # Windows
 
